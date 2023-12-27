@@ -57,7 +57,7 @@ if (!defined('ABSPATH')) {
     <div class="sn-footer text-white pt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-12">
+                <div class="col-md-4 col-12 logo-cont">
                    <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url( site_url() ); ?>/wp-content/uploads/2023/12/logo-1-copy.png" class="sn-logo mb-3" alt="logo"></a>
 
                     <p>
@@ -82,7 +82,7 @@ if (!defined('ABSPATH')) {
     </div>
     <div class="sn-footer-last">
         <div class="container">
-            <div class="text-center">
+            <div class="text-center copy">
             Copyright © 2023 – SGS Auto Parts
             </div>
         </div>

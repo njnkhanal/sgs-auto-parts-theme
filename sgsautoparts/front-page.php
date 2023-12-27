@@ -9,16 +9,16 @@ get_header(); ?>
         <?php if (have_rows('banner')) : ?>
             <?php while(have_rows('banner')) : the_row(); ?>
 
-        <div class="sn-hero">
+        <div class="sn-hero height">
             <?php $img = get_sub_field('bg_img'); ?>
             <?php if(!empty($img)) : ?>
                 <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_url($img['alt']); ?>">
             <?php endif; ?>
             <div class="sn-filter-override h-100">
 
-                <div class="container d-flex h-100">
+                <div class="container d-flex h-100 p-0">
 
-                    <div class="w-50 mx-auto sn-form-container">
+                    <div class="w-50 mx-auto sn-form-container smfull">
 
                         <div class="text-white banner p-3">
                             <?php $title = get_sub_field('bg_title'); ?>
@@ -26,8 +26,8 @@ get_header(); ?>
 
                             <?php if(!empty($title)) : ?>
 
-                                <h4 class="text-light sn-tophero-text">
-                                <?php echo($title); ?> <span>Subaru And Volkswagen</span> </h4>
+                                <h1 class="text-light">
+                                <?php echo($title); ?> <span>Subaru And Volkswagen</span> </h1>
                             <?php endif; ?>
 
                             <?php if(!empty($desc)) : ?>
@@ -46,132 +46,66 @@ get_header(); ?>
 
     </section>
 
-<!-- 
-
-    <section class="sn-about-section">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-8 col-12 d-flex">
-
-                    <div class="m-auto">
-
-                        <div class="text-center">
-
-                            
-
-                            <h3 class="sn-title">
-
-                                Welcome to SGS Auto Parts
-
-                            </h3>
-
-                            <h4 class="sn-sub-title">
-
-                                Wrecking All Makes & Models – Specialist VW & Subaru
-
-                            </h4>
-
-                        </div>
-
-                        <div class="row pt-3">
-
-                            <div class="col-md-6 col-12">
-
-                                <ul>
-
-                                    <li>Massive Range of Stock on the Shelf</li>
-
-                                    <li>Thousands of vehicles Dismantled</li>
-
-                                    <li>Instant access to millions of parts Australian wide</li>
-
-                                </ul>
-
-                            </div>
-
-                            <div class="col-md-6 col-12">
-
-                                <ul>
-
-                                    <li>Quick Delivery – NSW & Australia Wide</li>
-
-                                    <li>95% of every Vehicle recycled</li>
-
-                                    <li>Preferred Capricorn Supplier</li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-md-4 col-12">
-
-                    <div class="sn-about-img">
-
-                        <img class="" src="<?php echo esc_url( site_url() ); ?>/wp-content/uploads/2023/12/SGS-1920x450-C-.jpg" alt="">
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section> -->
-
-
     <section class="py-4">
-        <div class="container pt-5">
-            <div class="abt-bg" style="background-image: url('<?php echo esc_url( site_url() ); ?>/wp-content/uploads/2023/12/about-image-1.jpg');
-        background-repeat: no-repeat;
-        background-position: top center; background-size: cover;">
-                <div class="row">
-                    <div class="col-md-6 col-12 w-50 p-5 left-half">
-                        <h2>Welcome to SGS Auto Parts</h2>
-                        <p>SGS Auto Parts has been operating in Thornleigh since February 2011. In November 2015 a large storage and dismantling facility was added at Kurri Kurri in the Hunter Valley.SGS Auto Parts has been operating in Thornleigh since February 2011. In November 2015 a large storage and dismantling facility was added at Kurri Kurri in the Hunter Valley.</p>
+        <?php if(have_rows('about')) : ?>
+            <div class="container pt-5">
+                <?php while(have_rows('about')) : the_row(); ?>
+                    <?php $img = get_sub_field('abt_img'); ?>
+
+                    <?php if(!empty($img)) : ?>
+                        <div class="abt-bg" style="background-image: url('<?php echo esc_url( $img['url'] ); ?>');
+                            background-repeat: no-repeat;
+                            background-position: top center; background-size: cover;">
+
+                    <?php endif; ?>
+                        <div class="row w-50 w-sm-100 p-5 left-half smfull">
+                            <?php $title = get_sub_field('abt_title'); ?>
+
+                            <?php if(!empty($title)) : ?>
+                                <h2><?php echo($title); ?></h2>
+                            <?php endif; ?>
+
+                            <?php $desc = get_sub_field('abt_desc'); ?>
+
+                            <?php if(!empty($desc)) : ?>
+                                <?php echo($desc); ?>
+                            <?php endif; ?>
+                        </div>
                     </div>
-                </div>
+                <?php endwhile; ?>
             </div>
-        </div>
+        <?php endif; ?>
     </section>
 
     <section>
-        <div class="container about-card py-5">
-            <div class="row">
-                <div class="col-md-3">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    <h6>Massive Range of Stock on the Shelf</h6>
-                     <p>SGS Auto Parts has been operating in Thornleigh since February 2011. In November 2015 a large storage </p>
-                </div>
+        <?php if(have_rows('about')) : ?>
+            <div class="container about-card py-5">
+                <?php while(have_rows('about')) : the_row(); ?>
+                    <div class="row">
+                        <?php if(have_rows('cwi')) : ?>
+                            <?php while(have_rows('cwi')) : the_row(); ?>
+                                <div class="col-md-3 card-container">
+                                    <?php $icon = get_sub_field('icon'); ?>
+                                    <?php if(!empty($icon)) : ?>
+                                        <?php echo($icon); ?>
+                                    <?php endif; ?>
 
-                <div class="col-md-3">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    <h6>Thousands of vehicles Dismantled</h6>
-                     <p>SGS Auto Parts has been operating in Thornleigh since February 2011. In November 2015 a large storage </p>
-                </div>
+                                    <?php $cardTitle = get_sub_field('card_title'); ?>
+                                    <?php if(!empty($cardTitle)) : ?>
+                                        <h6><?php echo($cardTitle); ?></h6>
+                                    <?php endif; ?>
 
-                <div class="col-md-3">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    <h6>95% of every Vehicle recycled</h6>
-                     <p>SGS Auto Parts has been operating in Thornleigh since February 2011. In November 2015 a large storage </p>
-                </div>
-
-                <div class="col-md-3">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    <h6>Preferred Capricorn Supplier</h6>
-                     <p>SGS Auto Parts has been operating in Thornleigh since February 2011. In November 2015 a large storage </p>
-                </div>
+                                    <?php $cardDesc = get_sub_field('card_desc'); ?>
+                                    <?php if(!empty($cardDesc)) : ?>
+                                        <?php echo($cardDesc); ?>
+                                 <?php endif; ?>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </div>
+                <?php endwhile; ?>
             </div>
-        </div>
+        <?php endif; ?>
     </section>
 
     <section class="py-5 bg-shade">
@@ -265,89 +199,43 @@ get_header(); ?>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-2 my-4">
-                            <span><a href="#">Accura</a></span>
+                    <?php if (have_rows('featured_make')) : ?>
+                        <div class="row">
+                            <?php while (have_rows('featured_make')) : the_row(); ?>
+                                <div class="col-md-2 col-sm-6 my-4">
+                                    <?php
+                                    $make = get_sub_field('make_items');
+                                    $link = get_sub_field('items_url');
+                                    
+                                    if (!empty($make) && !empty($link)) :
+                                    ?>
+                                        <span><a href="<?php echo esc_url($link); ?>"><?php echo $make; ?></a></span>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endwhile; ?>
                         </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Chevy</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Ford</a></span>
-                        </div>
-                        <div class="col-md-2 my-4">
-                            <span><a href="#">Dodge</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Toyata</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Holda</a></span>
-                        </div>
-
-                        <div class="col-md-2 my-4">
-                            <span><a href="#">Kia</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Nissan</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Huyndai</a></span>
-                        </div>
-                        <div class="col-md-2 my-4">
-                            <span><a href="#">BMW</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Audi</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Valvo</a></span>
-                        </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2 my-4">
-                            <span><a href="#">Convertible</a></span>
+               <div class="container">
+                    <?php if (have_rows('featured_model')) : ?>
+                        <div class="row">
+                            <?php while (have_rows('featured_model')) : the_row(); ?>
+                                <div class="col-md-2 col-sm-6 my-4">
+                                    <?php
+                                    $make = get_sub_field('model_type');
+                                    $link = get_sub_field('model_link');
+                                    
+                                    if (!empty($make) && !empty($link)) :
+                                    ?>
+                                        <span><a href="<?php echo esc_url($link); ?>"><?php echo $make; ?></a></span>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endwhile; ?>
                         </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">A4 Prestige</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Q7 Premium</a></span>
-                        </div>
-                        <div class="col-md-2 my-4">
-                            <span><a href="#">City Express</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Colorado</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Civic</a></span>
-                        </div>
-
-                        <div class="col-md-2 my-4">
-                            <span><a href="#">A6 Quattro Premium</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Cherokee</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Q7 Premium</a></span>
-                        </div>
-                        <div class="col-md-2 my-4">
-                            <span><a href="#">Convertible</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Q7 Premium</a></span>
-                        </div>
-                         <div class="col-md-2 my-4">
-                            <span><a href="#">Colorado</a></span>
-                        </div>
-                    </div>
-                </div>          
+                    <?php endif; ?>
+                </div>         
             </div>
         </div>
     </div>
@@ -358,50 +246,29 @@ get_header(); ?>
         <h2 class="text-center mb-5">Our Latest Blog</h2>
 
         <div class="row blog">
+            <?php 
+                $args=array('post_type'=>'post','posts_per_page'=> '3');
+                $query=new WP_Query($args);
+                if($query->have_posts()){
+                while($query->have_posts()):$query->the_post();
+            ?>
             <div class="col-md-4">
-                <div class="card">
-                     <img src="<? echo site_url(); ?>/wp-content/uploads/2023/12/caplogo.jpg" alt="">
-                     <div class="card-header">
-                         <h3>title</h3>
+                <div class="card ">
+                    <a href="<?php the_permalink(); ?>">
+                         <?php the_post_thumbnail(); ?>
+                         <div class="card-header pt-4">
+                             <h3><?php the_title(); ?></h3>
+                         </div>
+                    </a>
+                     <div class="card-body pt-4">
+                        <?php echo wp_trim_words(get_the_content(),22);?>
                      </div>
-                     <div class="card-body">
-                         SGS Auto Parts has been operating in Thornleigh since February 2011. In November 2015 a large storage and dismantling facility was added at Kurri Kurri in the Hunter Valley.
-                     </div>
-                     <div class="card-footer">
-                         Learn More
-                     </div>
-                </div>
-            </div>
-
-             <div class="col-md-4">
-                <div class="card">
-                     <img src="<? echo site_url(); ?>/wp-content/uploads/2023/12/caplogo.jpg" alt="">
-                     <div class="card-header">
-                         <h3>title</h3>
-                     </div>
-                     <div class="card-body">
-                         SGS Auto Parts has been operating in Thornleigh since February 2011. In November 2015 a large storage and dismantling facility was added at Kurri Kurri in the Hunter Valley.
-                     </div>
-                     <div class="card-footer">
-                         Learn More
+                     <div class="card-footer pb-5">
+                         <a href="<?php the_permalink(); ?>">Learn More</a>
                      </div>
                 </div>
             </div>
-
-             <div class="col-md-4">
-                <div class="card">
-                     <img src="<? echo site_url(); ?>/wp-content/uploads/2023/12/caplogo.jpg" alt="">
-                     <div class="card-header">
-                         <h3>title</h3>
-                     </div>
-                     <div class="card-body">
-                         SGS Auto Parts has been operating in Thornleigh since February 2011. In November 2015 a large storage and dismantling facility was added at Kurri Kurri in the Hunter Valley.
-                     </div>
-                     <div class="card-footer">
-                         Learn More
-                     </div>
-                </div>
-            </div>
+             <?php  endwhile; wp_reset_query(); } ?>
         </div>
     </div>
 </section>
