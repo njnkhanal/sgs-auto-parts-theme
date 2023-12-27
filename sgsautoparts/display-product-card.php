@@ -6,7 +6,7 @@
 global $product;
 ?>
 
-<div class="col-md-4 col-12">
+<div class="col-lg-4 col-md-6 col-12">
     <div class="sn-card">
         <div class="sn-card-img">
             <?php echo get_the_post_thumbnail($product->get_id(), 'full', array('class' => 'card-img-top', 'alt' => '')); ?>

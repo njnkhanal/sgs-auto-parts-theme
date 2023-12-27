@@ -163,9 +163,8 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
                                             <i class="fa fa-user-circle" aria-hidden="true"></i> User Account
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="<?php echo wp_login_url() ?>">Login</a></li>
-                                            <li><a class="dropdown-item" href="#">Register</a></li>
-                                                
+                                            <li><a class="dropdown-item" href="<?php echo wc_get_page_permalink('myaccount'); ?>">Login</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo wc_get_page_permalink('myaccount') . '?action=register'; ?>">Register</a></li>                                                
                                         </ul>
                                     </li>
                                 <?php } ?>
