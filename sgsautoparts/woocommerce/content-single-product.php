@@ -41,7 +41,7 @@ if ( function_exists('woocommerce_breadcrumb') ) {
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
 	
-	<div class="summary entry-summary row w-100">
+	<div class="summary entry-summary row w-100 mb-5 pb-4">
 		<div class="col-md-4 col-12">
 				
 			<?php

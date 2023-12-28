@@ -200,6 +200,7 @@ function custom_mega_menu() {
 // For example, you might use 'wp_nav_menu_items' to add it to a specific menu location
 add_filter('wp_nav_menu_items_mega', 'custom_mega_menu', 10, 2);
 
+
 // Remove the Downloads tab on the My Account page
 function remove_my_account_downloads( $items ) {
     unset( $items['downloads'] );

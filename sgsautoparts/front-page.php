@@ -114,7 +114,7 @@ get_header(); ?>
             <?php if(have_rows('volk_cat')) : ?>
                 <div class="row cat-img">
                     <?php while(have_rows('volk_cat')) : the_row(); ?>
-                        <div class="col-md-2 mt-4">
+                        <div class="col-lg-2 col-md-3 col-sm-6 mt-4">
                             <div class="card text-center align-items-center">
                                 <?php $img = get_sub_field('parts_img'); ?>
                                 <?php if(!empty($img)): ?>
@@ -140,7 +140,7 @@ get_header(); ?>
             <?php if(have_rows('subaru_cat')) : ?>
                 <div class="row cat-img">
                     <?php while(have_rows('subaru_cat')) : the_row(); ?>
-                        <div class="col-md-2 mt-4">
+                        <div class="col-lg-2 col-md-3 col-sm-6 mt-4">
                             <div class="card text-center align-items-center">
                                 <?php $img = get_sub_field('parts_image'); ?>
                                 <?php if(!empty($img)): ?>
