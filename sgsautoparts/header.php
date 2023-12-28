@@ -163,19 +163,19 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <li><a class="dropdown-item" href="<?php echo wc_get_page_permalink('myaccount'); ?>"><i class="fa fa-home" aria-hidden="true"></i> Account Home</a></li>
-                                                <li><a class="dropdown-item" href="<?php echo wc_get_endpoint_url('orders'); ?>"><i class="fas fa-sitemap"></i> Orders</a></li>
+                                                <li><a class="dropdown-item" href="<?php echo wc_get_account_endpoint_url('orders'); ?>"><i class="fas fa-sitemap"></i> Orders</a></li>
                                                 <!-- <li><a class="dropdown-item" href="#">Quotes</a></li>
                                                 <li><a class="dropdown-item" href="#">Pay Invoices</a></li>
                                                 <li><a class="dropdown-item" href="#">Reorder</a></li>
                                                 <li><a class="dropdown-item" href="#">Wishlists</a></li>
                                                 <li><a class="dropdown-item" href="#">Resolution Centre</a></li> -->
-                                                <li><a class="dropdown-item" href="<?php echo wc_get_endpoint_url('edit-account'); ?>"><i class="fa fa-edit" aria-hidden="true"></i> Edit My Details</a></li>
-                                                <li><a class="dropdown-item" href="<?php echo wc_get_endpoint_url('edit-address'); ?>"><i class="fa fa-address-book" aria-hidden="true"></i> Edit My Address Book</a></li>
+                                                <li><a class="dropdown-item" href="<?php echo wc_get_account_endpoint_url('edit-account'); ?>"><i class="fa fa-edit" aria-hidden="true"></i> Edit My Details</a></li>
+                                                <li><a class="dropdown-item" href="<?php echo wc_get_account_endpoint_url('edit-address'); ?>"><i class="fa fa-address-book" aria-hidden="true"></i> Edit My Address Book</a></li>
 
                                                 <div class="sn-divider"></div>
 
                                                 <?php if (is_user_logged_in()) { ?>
-                                                    <li><a class="dropdown-item" href="<?php echo wc_get_endpoint_url('change-password'); ?>"><i class="fa fa-key" aria-hidden="true"></i> Change My Password</a></li>
+                                                    <li><a class="dropdown-item" href="<?php echo home_url('/change-password'); ?>"><i class="fa fa-key" aria-hidden="true"></i> Change My Password</a></li>
                                                     <li><a class="dropdown-item" href="<?php echo wp_logout_url(home_url()); ?>"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
                                                 <?php } else { ?>
                                                     <li><a class="dropdown-item" href="<?php echo wc_get_page_permalink('myaccount'); ?>"><i class="fas fa-sign-in-alt"></i> Login</a></li>

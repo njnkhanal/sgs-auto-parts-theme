@@ -132,7 +132,9 @@ img {
 .sn-nav-drop {
     margin-left: auto;
 }
-
+.sn-nav-drop .dropdown-menu{
+    position: absolute;
+}
 .nav-link {
     color: var(--sn-white);
     padding: 10px 20px !important;
