@@ -200,7 +200,7 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
 
 	// astra_content_before();
 	?>
-    <main>
+    <main class="bg-light">
     <?php if (!is_front_page()) : ?>
         <div class="container">
     <?php endif; ?>

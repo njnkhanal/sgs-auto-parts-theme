@@ -864,3 +864,48 @@ a{
 .gform_button{
     background-color: var(--sn-primary) !important;
 }
+.sn-footer-menu{
+    list-style: none;
+    display: flex;
+    justify-content: end;
+}
+.sn-footer-menu li a{
+    color: var(--sn-white);
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+/* blog */
+.sn-blog-title{
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--sn-primary);
+}
+.sn-blog-ud{
+    color: var(--sn-secondary);
+    font-weight: 600;
+    padding: 10px 0;
+}
+.sn-post-date{
+    padding-right: 20px;
+}
+.sn-card{
+    background-color: var(--sn-white);
+}
+.sn-top-category{
+    background: var(--sn-secondary);
+    padding: 5px 10px;
+    color: var(--sn-white);
+    border-bottom-right-radius: 10px;
+}
+.sn-top-category a{
+    color: var(--sn-white);
+}
+.sn-tl0{
+    left: 0;
+    right: auto;
+}
+.sn-blog-page{
+    background-color: var(--sn-white);
+    padding: 20px 0;
+}

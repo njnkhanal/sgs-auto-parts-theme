@@ -82,8 +82,25 @@ if (!defined('ABSPATH')) {
     </div>
     <div class="sn-footer-last">
         <div class="container">
-            <div class="text-center copy">
-            Copyright © 2023 – SGS Auto Parts
+            <div class="row">
+                <div class="col-md-6 col-12">
+                    <div class="copy">
+                        Copyright © 2023 – SGS Auto Parts
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 text-right">
+                    <?php
+                        $footer_menu_items = wp_get_nav_menu_items('Copyright Menu');
+
+                        if ($footer_menu_items) {
+                            echo '<ul class="sn-footer-menu">';
+                            foreach ($footer_menu_items as $item) {
+                                echo '<li><a href="' . $item->url . '">' . $item->title . '</a></li>';
+                            }
+                            echo '</ul>';
+                        }
+                    ?>
+                </div>
             </div>
         </div>
     </div>
