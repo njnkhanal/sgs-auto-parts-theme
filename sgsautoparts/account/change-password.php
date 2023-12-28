@@ -37,27 +37,49 @@ get_header();
                     }
                 ?>
                 <?php if (is_user_logged_in()) : ?>
-                    <form id="change-password-form" method="post">
-                        <div class="mb-3">
-                            <label for="old-password" class="form-label">Old Password:</label>
-                            <input type="password" class="form-control" name="old-password" required>
-                        </div>
+                    <?php $pageTitle = get_field('title');?>
+                    <?php if(!empty($pageTitle)): ?>
+                        <h1><?php echo $pageTitle; ?> </h1>
+                    <?php endif; ?>
+                    <div class="sn-divider"></div>
+                    <?php if(have_rows('fd_name')) : while (have_rows('fd_name')) : the_row(); ?>
+                        <form id="change-password-form" method="post">
+                            <?php $oldP = get_sub_field('current_password') ?>
+                            <?php if(!empty($oldP)): ?>
+                                <div class="mb-3">
+                                    <label for="old-password" class="form-label"><?php echo $oldP ?> :</label>
+                                    <input type="password" class="form-control" name="old-password" required>
+                                </div>
+                            <?php endif; ?>
+                            <?php $newP = get_sub_field('new_password') ?>
+                            <?php if(!empty($newP)): ?>
+                                <div class="mb-3">
+                                    <label for="new-password" class="form-label"><?php echo $newP; ?> :</label>
+                                    <input type="password" class="form-control" name="new-password" required>
+                                </div>
+                            <?php endif; ?>
+                            <?php $cPsd = get_sub_field('confirm_password') ?>
+                            <?php if(!empty( $cPsd )): ?>
+                                <div class="mb-3">
+                                    <label for="confirm-password" class="form-label"><?php echo $cPsd; ?> :</label>
+                                    <input type="password" class="form-control" name="confirm-password" required>
+                                </div>
+                            <?php endif; ?>
 
-                        <div class="mb-3">
-                            <label for="new-password" class="form-label">New Password:</label>
-                            <input type="password" class="form-control" name="new-password" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="confirm-password" class="form-label">Confirm Password:</label>
-                            <input type="password" class="form-control" name="confirm-password" required>
-                        </div>
-
-                        <button type="submit" class="button" name="change-password">Change Password</button>
-                    </form>
+                            <button type="submit" class="button" name="change-password">Change Password</button>
+                        </form>
+                    <?php endwhile;
+                        endif; ?>
                 <?php else : ?>
                     <div class="alert alert-warning">
-                        <strong >You must be logged in to change your password. <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')) ?>">Login / Register</a></strong>
+                        <strong>
+                            <?php 
+                                $notLog = get_field('not_logined_message');
+                                if(!empty( $notLog )){
+                                    echo $notLog;
+                                }
+                            ?>
+                        </strong>
                     </div>
                 <?php endif; ?>
             </div>
