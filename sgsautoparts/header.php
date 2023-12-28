@@ -140,34 +140,50 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
                                             ?>
                                         </ul>
                                     </li>
-                                <?php
-                                    // Display the custom navigation menu
-                                    wp_nav_menu(array(
-                                        'theme_location' => 'primary_menu',
-                                        'menu_class'     => 'navbar-nav w-100',
-                                        'container'      => 'div',
-                                        'container_class'=> '',
-                                        'container_id'   => '',
-                                        'walker'         => new WP_Bootstrap_Navwalker(),
-                                    ));
+                                    <div class="nav-md-show">
+                                        <button class="btn sn-md-show text-light" type="button">
+                                            <i class="fa fa-bars" aria-hidden="true"></i>
+                                        </button>
+                                        <?php
+                                            // Display the custom navigation menu
+                                            wp_nav_menu(array(
+                                                'theme_location' => 'primary_menu',
+                                                'menu_class'     => 'navbar-nav w-100',
+                                                'container'      => 'div',
+                                                'container_class'=> '',
+                                                'container_id'   => '',
+                                                'walker'         => new WP_Bootstrap_Navwalker(),
+                                            ));
 
-                                ?>
-                                
-                                <?php if(is_user_logged_in()) { ?>
-                                    <li class="nav-item sn-nav-drop dropdown">
-                                        <a class="nav-link active" href="<?php echo esc_url(wc_get_account_endpoint_url('dashboard')) ?>"><i class="fa fa-user" aria-hidden="true"></i> <?php echo wp_get_current_user()->display_name ?> </a>
-                                    </li>
-                                <?php }else{ ?>
-                                    <li class="nav-item sn-nav-drop dropdown">
-                                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa fa-user-circle" aria-hidden="true"></i> User Account
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="<?php echo wc_get_page_permalink('myaccount'); ?>">Login</a></li>
-                                            <li><a class="dropdown-item" href="<?php echo wc_get_page_permalink('myaccount') . '?action=register'; ?>">Register</a></li>                                                
-                                        </ul>
-                                    </li>
-                                <?php } ?>
+                                        ?>
+                                    </div>
+                                        <li class="nav-item sn-nav-drop dropdown">
+                                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-user-circle" aria-hidden="true"></i> My Account
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li><a class="dropdown-item" href="<?php echo wc_get_page_permalink('myaccount'); ?>"><i class="fa fa-home" aria-hidden="true"></i> Account Home</a></li>
+                                                <li><a class="dropdown-item" href="<?php echo wc_get_endpoint_url('orders'); ?>"><i class="fas fa-sitemap"></i> Orders</a></li>
+                                                <!-- <li><a class="dropdown-item" href="#">Quotes</a></li>
+                                                <li><a class="dropdown-item" href="#">Pay Invoices</a></li>
+                                                <li><a class="dropdown-item" href="#">Reorder</a></li>
+                                                <li><a class="dropdown-item" href="#">Wishlists</a></li>
+                                                <li><a class="dropdown-item" href="#">Resolution Centre</a></li> -->
+                                                <li><a class="dropdown-item" href="<?php echo wc_get_endpoint_url('edit-account'); ?>"><i class="fa fa-edit" aria-hidden="true"></i> Edit My Details</a></li>
+                                                <li><a class="dropdown-item" href="<?php echo wc_get_endpoint_url('edit-address'); ?>"><i class="fa fa-address-book" aria-hidden="true"></i> Edit My Address Book</a></li>
+
+                                                <div class="sn-divider"></div>
+
+                                                <?php if (is_user_logged_in()) { ?>
+                                                    <li><a class="dropdown-item" href="<?php echo wc_get_endpoint_url('change-password'); ?>"><i class="fa fa-key" aria-hidden="true"></i> Change My Password</a></li>
+                                                    <li><a class="dropdown-item" href="<?php echo wp_logout_url(home_url()); ?>"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+                                                <?php } else { ?>
+                                                    <li><a class="dropdown-item" href="<?php echo wc_get_page_permalink('myaccount'); ?>"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                                                    <li><a class="dropdown-item" href="<?php echo wc_get_page_permalink('myaccount') . '?action=register'; ?>"><i class="fas fa-user-plus"></i> Register</a></li>                                                
+                                                <?php } ?>
+                                            </ul>
+                                        </li>
+                                    
                             </div>
                         </div>
                     </div>

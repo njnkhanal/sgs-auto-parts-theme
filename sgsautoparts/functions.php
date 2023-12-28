@@ -172,7 +172,13 @@ function custom_mega_menu() {
         echo '<ul class="row">';
 
         // Get product categories
-        $product_categories = get_terms('product_cat');
+        // $product_categories = get_terms('product_cat');
+        $product_categories = get_terms(array(
+            'taxonomy' => 'product_cat',
+            'exclude' => array(get_option('default_product_cat')), // Exclude Uncategorized category
+            'orderby' => 'name', // Order by name
+            'order' => 'ASC', // Ascending order
+        ));
 
         // Loop through categories and display in Mega Menu
         foreach ($product_categories as $category) {
