@@ -88,9 +88,9 @@ get_header(); ?>
                         $category = isset($_GET['category']) ? array_map('sanitize_text_field', $_GET['category']) : array();
                         
                         // Get the price range
-                        $min_price = isset($_GET['min_price']) ? floatval($_GET['min_price']) : 0;
-                        $max_price = isset($_GET['max_price']) ? floatval($_GET['max_price']) + 1 : 1000000; // Adjust the upper limit as needed
-                        
+                        $min_price = isset($_GET['minPrice']) ? floatval($_GET['minPrice']) : 0;
+                        $max_price = isset($_GET['maxPrice']) ? floatval($_GET['maxPrice']) + 1 : 1000000; // Adjust the upper limit as needed
+
                         // WooCommerce product query
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array(

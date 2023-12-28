@@ -121,9 +121,9 @@ do_action( 'woocommerce_before_main_content' );
 								$category[] = $current_category->slug;
 							}
 
-							$min_price = isset($_GET['min_price']) ? floatval($_GET['min_price']) : 0;
-							$max_price = isset($_GET['max_price']) ? floatval($_GET['max_price']) + 1 : 1000000; // Adjust the upper limit as needed
-							
+							$min_price = isset($_GET['minPrice']) ? floatval($_GET['minPrice']) : 0;
+							$max_price = isset($_GET['maxPrice']) ? floatval($_GET['maxPrice']) + 1 : 1000000; // Adjust the upper limit as needed
+								
 							
 							$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 							$args = array(
