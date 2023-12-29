@@ -10,6 +10,7 @@
             <header class="page-header">
                 <?php
                 the_archive_title('<h4 class="sn-title">', '</h4>');
+                echo '<div class="sn-divider" > </div>';
                 the_archive_description('<div class="archive-description">', '</div>');
                 ?>
             </header>

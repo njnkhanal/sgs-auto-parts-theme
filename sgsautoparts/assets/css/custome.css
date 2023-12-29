@@ -1158,3 +1158,9 @@ a{
     color: var(--sn-white);
     border-radius: 10px;
 }
+.sn-title span{
+    background: var(--sn-border);
+    padding: 7px 15px;
+    font-size: 18px !important;
+    border-radius: 10px;
+}
