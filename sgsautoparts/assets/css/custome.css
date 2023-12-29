@@ -47,6 +47,7 @@ img {
 
 .sn-cost-search input {
     border: none;
+    padding: 10px;
     padding-left: 20px;
 }
 
@@ -79,7 +80,7 @@ img {
     background-color: #050040;
     padding: 0px 3px;
     font-size: 15px;
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
 }
 
@@ -188,7 +189,7 @@ img {
 
 .sn-form-container {
     background-color: var(--sn-primary-low);
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     margin: auto;
 }
@@ -316,7 +317,7 @@ img {
 
 .make-models .nav-link:hover {
     background-color: transparent;
-    color: #ff1517;
+    color: var(--sn-secondary);
 }
 
 .make-models .nav-link {
@@ -459,7 +460,7 @@ textarea.textarea {
 .conta, 
 .sn-bmc{
     box-shadow:  var(--sn-shadow-color) 0px 0px 16px;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 60px 40px;
 }
 
@@ -483,7 +484,7 @@ textarea.textarea {
 .wc-block-components-sidebar-layout .wc-block-components-main, 
 .wc-block-components-sidebar{
     /* box-shadow:  var(--sn-shadow-color) 0px 8px 24px !important; */
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px !important;
 }
 
@@ -503,7 +504,7 @@ textarea.textarea {
 }
 
 button, [CLASS*="wc-block"] button{
-    padding:15px 30px !important;
+    /* padding:15px 30px !important; */
 }
 
 .sn-product-list-page{
@@ -577,7 +578,7 @@ section.related.products {
 .sn-card{
     width: 100%;
     box-shadow: 0 0 10px  var(--sn-shadow-color);
-    border-radius: 10px;
+    border-radius: 5px;
     position: relative;
     overflow: hidden;
     margin-top: 20px;
@@ -632,7 +633,7 @@ section.related.products {
     color: var(--sn-white);
     padding: 3px 10px;
     font-size: 12px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 0 20px;
 }
 .sn-cat-filter input{
@@ -1052,7 +1053,7 @@ a{
     padding: 15px !important;
     background: white;
     box-shadow: 0 0 10px var(--sn-shadow-color);
-    border-radius: 10px;
+    border-radius: 5px;
     margin-bottom: 20px;
     position: sticky;
     top: 20px;
@@ -1061,7 +1062,7 @@ a{
     box-shadow: 0 0 10px var(--sn-shadow-color);
 }
 .sn-br{
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .sn-button{
     background-color: var(--sn-secondary);
@@ -1073,7 +1074,7 @@ a{
 /* comment */
 .comment.byuser{
     box-shadow: 0 0 10px var(--sn-shadow-color);
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px 0;
 }
 .ast-separate-container .ast-article-post, .ast-separate-container .ast-article-single, .ast-separate-container .ast-comment-list li.depth-1, .ast-separate-container .comment-respond{
@@ -1118,7 +1119,7 @@ a{
 }
 .comment-respond{
     padding: 15px !important;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .sn-bg-main{
     background-color: var(--sn-white);
@@ -1147,6 +1148,7 @@ a{
 .sn-nav-drop .dropdown-menu{
     padding: 0;
     right: 0;
+    left: auto
 }
 .sn-nav-drop .dropdown-menu .dropdown-item{
     padding: 7px 15px;
@@ -1162,20 +1164,32 @@ a{
     margin-right: 0;
 }
 .list-unstyled li a{
-    display: block;
+    /* display: inherit; */
     background: var(--sn-primary);
-    padding: 10px 15px;
+    padding: 10px 20px;
+    font-size: 0.8rem;
     color: var(--sn-white);
-    border-radius: 10px;
+    border-radius: 5px;
+    line-height: 1rem;
 }
 .sn-title span{
     background: var(--sn-border);
     padding: 7px 15px;
     font-size: 18px !important;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /* wc */
 .woocommerce-js #reviews #review_form{
     padding: 0;
+}
+
+.card-text{
+    font-size: 15px;
+}
+
+@media (max-width: 991px) and (min-width: 768px){
+    .sn-cart{
+        margin-left: 0;
+    }
 }

@@ -65,7 +65,7 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
 		<div class="sn-top-header">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3 col-12 d-flex">
+					<div class="col-lg-3 col-md-5 col-12 d-flex">
 						<a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url( site_url() ); ?>/wp-content/uploads/2023/12/logo-1.jpg" class="sn-logo" alt=""></a>
                         
                         <div class="sn-enquiry sn-sm-block">
@@ -74,7 +74,7 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
                         </div>
                         
 					</div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 col-md-7">
                         <form class="d-flex h-100" action="<?php echo esc_url(site_url()); ?>/product-list" method="GET">
                             <div class="sn-cost-search">
                                 <input type="text" name="search" id="search" class="form-control" placeholder="Search Parts" aria-describedby="helpId" value="<?php 
@@ -87,7 +87,7 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-4 d-flex sn-cont-cat-eq">
+                    <div class="col-lg-4 col-12 d-flex sn-cont-cat-eq">
                         <button class="btn sn-sm-block" id="tBtnNavbar" type="button">
                                 <i class="fa fa-bars" aria-hidden="true"></i>
                         </button>

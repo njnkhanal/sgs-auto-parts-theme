@@ -37,7 +37,7 @@
         ?>
 
         </ul>
-        <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>" class="sn-button w-100 mt-3 sn-br text-center">View All</a>
+        <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>" class="button w-100 mt-3 sn-br text-center">View All</a>
     </div>
 
 
@@ -56,7 +56,7 @@
             <?php
             $categories = get_categories();
             foreach ($categories as $category) {
-                echo '<li><a href="' . get_category_link($category->term_id) . '">' . esc_html($category->name) . '</a></li>';
+                echo '<li><a class="button" href="' . get_category_link($category->term_id) . '">' . esc_html($category->name) . '</a></li>';
             }
             ?>
         </ul>

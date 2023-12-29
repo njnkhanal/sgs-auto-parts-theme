@@ -34,6 +34,6 @@ global $product;
                 <?php echo $product->get_stock_status() ?>
             </div>
         </div>
-        <a href="<?php echo $product->add_to_cart_url(); ?>" class="sn-add-to-cart"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add To Cart</a>
+        <a href="<?php echo $product->add_to_cart_url(); ?>" class="sn-add-to-cart button w-100"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add To Cart</a>
     </div>
 </div>
