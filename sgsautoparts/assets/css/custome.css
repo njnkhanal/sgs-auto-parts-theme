@@ -86,6 +86,7 @@ img {
 .sn-cart-text {
     padding-left: 15px;
     font-size: 16px;
+    line-height: 18px;
 }
 
 .sn-enquiry {
@@ -474,15 +475,16 @@ textarea.textarea {
 }
 
 .wc-block-components-sidebar-layout .wc-block-components-main{
-    width: 64% !important;
-    margin-right: 1% !important;
+    /* width: 64% !important;
+    margin-right: 1% !important; */
+    padding: 10px !important;
 }
 
 .wc-block-components-sidebar-layout .wc-block-components-main, 
 .wc-block-components-sidebar{
-    box-shadow:  var(--sn-shadow-color) 0px 8px 24px !important;
+    /* box-shadow:  var(--sn-shadow-color) 0px 8px 24px !important; */
     border-radius: 10px;
-    padding: 30px 32px;
+    padding: 10px !important;
 }
 
 .woocommerce-js div.product .related.products, .woocommerce-js div.product .woocommerce-tabs{
@@ -923,8 +925,13 @@ a{
 .nav-md-show .sn-md-show{
     display: none;
 }
-@media (max-width: 1403px) and (min-width: 780px){
-    
+@media (max-width: 1403px) and (min-width: 768px){
+    .sn-sm-block{
+        display: none;
+    }
+    .sn-sm-none{
+        display: block;
+    }
     .nav-md-show .sn-md-show{
         display: block;
     }
@@ -942,10 +949,12 @@ a{
 }
 
 
-@media (max-width: 780px) {
-    
+@media (max-width: 767px) {
+    .nav-md-show .sn-md-show{
+        display: none;
+    }
     .sn-hero {
-        height: 250px;
+        /* height: 250px; */
     }
     #primary{
         margin-top: 10px !important;
@@ -981,7 +990,7 @@ a{
         border-bottom: solid 2px var(--sn-primary);
     }
     .sn-cont-cat-eq button{
-        padding: 10px;
+        padding: 0 15px !important;
         border-radius: 0;
         background-color: var(--sn-primary);
         color: var(--sn-white);
@@ -1040,7 +1049,7 @@ a{
 
 /* cst */
 #secondary{
-    padding: 15px;
+    padding: 15px !important;
     background: white;
     box-shadow: 0 0 10px var(--sn-shadow-color);
     border-radius: 10px;
@@ -1137,6 +1146,7 @@ a{
 }
 .sn-nav-drop .dropdown-menu{
     padding: 0;
+    right: 0;
 }
 .sn-nav-drop .dropdown-menu .dropdown-item{
     padding: 7px 15px;
@@ -1163,4 +1173,9 @@ a{
     padding: 7px 15px;
     font-size: 18px !important;
     border-radius: 10px;
+}
+
+/* wc */
+.woocommerce-js #reviews #review_form{
+    padding: 0;
 }

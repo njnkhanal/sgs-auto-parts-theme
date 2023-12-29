@@ -79,7 +79,7 @@ get_header(); ?>
             </div>
             <div class="col-md-8 col-12 mb-3">
                 <h4>Products</h4>
-                <div class="row">
+                <div>
                     <div id="productContainer" class="row">
                     <?php
                         $search = isset($_GET['search']) ? sanitize_text_field($_GET['search']) : '';

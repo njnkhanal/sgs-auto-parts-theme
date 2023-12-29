@@ -92,7 +92,7 @@ get_header(); ?>
 
                                     <?php $cardTitle = get_sub_field('card_title'); ?>
                                     <?php if(!empty($cardTitle)) : ?>
-                                        <h6><?php echo($cardTitle); ?></h6>
+                                        <h4 class="mb-2"><?php echo($cardTitle); ?></h4>
                                     <?php endif; ?>
 
                                     <?php $cardDesc = get_sub_field('card_desc'); ?>

@@ -2,18 +2,35 @@
 
 <?php get_header(); ?>
 
-<div class="container mt-3">
+<div class="container my-3">
     <div class="row">
 
         <div class="col-md-8 sn-lpage">
+        <?php
+            $search_query = isset($_GET['s']) ? sanitize_text_field($_GET['s']) : '';
 
-            <header class="page-header">
-                <?php
-                the_archive_title('<h4 class="sn-title">', '</h4>');
-                echo '<div class="sn-divider" > </div>';
-                the_archive_description('<div class="archive-description">', '</div>');
+            if (!empty($search_query)) :
                 ?>
-            </header>
+                <header class="page-header">
+                    <h4 class="sn-title"><?php printf('Search Results for: "%s"', $search_query); ?></h4>
+                    <div class="sn-divider"></div>
+                    <div class="archive-description">
+                        <?php
+                        // You can add a custom description here if needed.
+                        // the_archive_description();
+                        ?>
+                    </div>
+                </header>
+            <?php else: ?>
+                <header class="page-header">
+                    <?php
+                    the_archive_title('<h4 class="sn-title">', '</h4>');
+                    echo '<div class="sn-divider"></div>';
+                    the_archive_description('<div class="archive-description">', '</div>');
+                    ?>
+                </header>
+            <?php endif; ?>
+
 
             <?php
             // Start the loop.

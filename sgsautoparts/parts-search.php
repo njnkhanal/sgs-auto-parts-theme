@@ -8,7 +8,7 @@ Template Name: Parts Search
 
 
 <main>
-    <div class="container">
+    <div class="container py-4">
         <h1>Search Parts</h1>
         <div class="sn-iframe-link">
             <iframe id="portalFrame" src="https://ops.carparts-au.com/ops/sgs/partSearch.php" name="portalFrame" width="1176" height="1500px" frameborder="0px"></iframe>

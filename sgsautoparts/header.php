@@ -103,7 +103,7 @@ if ( apply_filters( 'astra_header_profile_gmpg_link', true ) ) {
                                 </span>
                             </a>
                             <div class="sn-cart-text">
-                                <span>Cart</span> <br>
+                                <span class="d-block">Cart</span>
                                 <span>
                                     <?php
                                     // Get the total cost of items in the cart
