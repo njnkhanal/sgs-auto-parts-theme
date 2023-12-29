@@ -114,7 +114,7 @@ img {
 
 .sn-mega-menu ul li a:hover {
     color: #ffffff;
-    background-color: #ff1717;
+    background-color: var(--sn-secondary);
     box-shadow: 2px 2px 5px  var(--sn-shadow-color);
     border-radius: 2px;
 }
@@ -411,7 +411,7 @@ img {
 }
 
 .sn-footer-last {
-    background-color: #ff1717;
+    background-color: var(--sn-secondary);
     color: var(--sn-white);
     padding: 10px 0;
 }
@@ -1124,4 +1124,37 @@ a{
 .sn-lpage .sn-card{
     box-shadow: none;
     border-radius: 0;
+}
+
+
+/* njn edit */
+.nav-md-show:hover button{
+    background-color: var(--sn-secondary);
+    border-radius: 0;
+}
+.nav-md-show button{
+    padding: 10px 15px !important;
+}
+.sn-nav-drop .dropdown-menu{
+    padding: 0;
+}
+.sn-nav-drop .dropdown-menu .dropdown-item{
+    padding: 7px 15px;
+}
+.sn-nav-drop .dropdown-menu .dropdown-item:hover{
+    background-color: var(--sn-border);
+}
+.list-unstyled li{
+    display: inline-block;
+    margin-right: 10px;
+}
+.list-unstyled li:last-child{
+    margin-right: 0;
+}
+.list-unstyled li a{
+    display: block;
+    background: var(--sn-primary);
+    padding: 10px 15px;
+    color: var(--sn-white);
+    border-radius: 10px;
 }

@@ -39,7 +39,7 @@ if (!defined('ABSPATH')) {
                                     <div class="shipping-desc text-white px-3">
                                         <?php $title = get_sub_field('title'); ?>
                                         <?php if(!empty($title)) : ?>
-                                            <h6 class="text-white mb-3"><?php echo ($title); ?></h6>
+                                            <h5 class="text-white mb-3"><?php echo ($title); ?></h5>
                                         <?php endif; ?>
 
                                         <?php $desc = get_sub_field('short_desc'); ?>
@@ -84,7 +84,7 @@ if (!defined('ABSPATH')) {
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-12">
-                    <div class="copy">
+                    <div class="copy copy-center">
                         Copyright © 2023 – SGS Auto Parts
                     </div>
                 </div>
@@ -93,7 +93,7 @@ if (!defined('ABSPATH')) {
                         $footer_menu_items = wp_get_nav_menu_items('Copyright Menu');
 
                         if ($footer_menu_items) {
-                            echo '<ul class="sn-footer-menu">';
+                            echo '<ul class="d-flex gap-2 mb-0 justify-content-end copy-center sn-footer-menu">';
                             foreach ($footer_menu_items as $item) {
                                 echo '<li><a href="' . $item->url . '">' . $item->title . '</a></li>';
                             }

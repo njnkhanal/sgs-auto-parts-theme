@@ -5,7 +5,7 @@
     <div class="sn-divider"></div>
     <div class="widget">
         <h3 class="widget-title">Recent Posts</h3>
-        <ul class="list-unstyled">
+        <ul class="">
         <?php
             $recent_posts = wp_get_recent_posts(array('numberposts' => 3));
             foreach ($recent_posts as $recent_post) {
