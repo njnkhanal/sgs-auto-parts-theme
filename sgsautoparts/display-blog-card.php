@@ -26,9 +26,11 @@
                         <?php
                         $author_id = get_the_author_meta('ID');
                         $author_name = get_the_author_meta('display_name');
+                        $author_url = get_author_posts_url($author_id);
                         ?>
-                        <strong><i class="fa fa-user" aria-hidden="true"></i> <?php echo esc_html($author_name); ?></strong>
+                        <strong><i class="fa fa-user" aria-hidden="true"></i> <a href="<?php echo esc_url($author_url); ?>"><?php echo esc_html($author_name); ?></a></strong>
                     </div>
+
 
                     <div class="sn-post-excerpt">
                         <?php // the_excerpt(); ?>
